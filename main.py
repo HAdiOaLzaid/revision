@@ -45,3 +45,15 @@ print('hi\nmy\nname\nis\n')
 x='python'
 print(x[2])
 print(x[0:3])
+#try and except number of years bonus. note: this was added after the midterm.
+try:
+  x=float(input('number of years served:'))
+  if x<1:
+    print('Bonus is:',"0%")
+  elif x>=2 and x<6:
+    print('Bonus is:',"2%")
+  elif x>=6:
+    print('Bonus is:',"3%")
+except:
+   print("Number of years must be in numbers")
+  
