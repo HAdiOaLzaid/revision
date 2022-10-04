@@ -56,4 +56,4 @@ try:
     print('Bonus is:',"3%")
 except:
    print("Number of years must be in numbers")
-  
+# IMPORTANT:the except block will only be executed if the error is within the try block. meaning that if you assign the value x *before* the try function (not inside the try: indentation), and the input was not a number, the except block won't be executed and you would get an error
