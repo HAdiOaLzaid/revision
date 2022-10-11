@@ -93,7 +93,7 @@ else:
     print('Rock...\nPaper...\nScissors\nShoot')
     print(z,'VS',y,'YOU LOSE!')
   elif z==y:
-    print('Rock...\nPaper...\nScissors/nShoot')
+    print('Rock...\nPaper...\nScissors\nShoot')
     print(z,'VS',y,'DRAW!')
 #
 #finding a letter in a text
@@ -105,4 +105,40 @@ for b in y:
    if b==z:
      x=x+1
 print('the letter',z,'appeaqred',x,'times')
+#^ uppercase of the same letter won't count i.e: the text is cccccC it will only count 5 times
+#printing in 1 line for 'for loops'
+print('----------------------------------------')
+fruitsBasket=['apple','orange','bannana','grapes']
+for fruit in fruitsBasket:
+  print(fruit,end=',')
+# we use end=',' to print the values in the same line
+#string play
+print('\n------------------------------------------')
+name='python'  
+print(name[2])
+print(name.upper())
+print(name.lower())
+print(name.replace('p','b'))
+print(name[1:4])
 #
+#list operations
+print('-------------------------------------------')
+my_list=['apple','banana','cherry']
+print(my_list)
+print("list length is:",len(my_list))
+if 'apple' in my_list:
+  print("yes,'apple' is in my list")
+#
+#adding even numbers in a range
+print('------------------------------------------')
+Tot=0
+for x in range(10):
+  if x%2==0:
+    Tot=Tot+x
+print('total:',Tot)
+# x%2==0 means the remainder of x/2 is 0 which is only true for even numbers
+#printing a number and its square
+print('-----------------------------')
+for number in range(1,11):
+  square=number**2
+  print(number,'\t     ',square)
