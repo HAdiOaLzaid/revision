@@ -1,3 +1,5 @@
+import time
+#***PLEASE IGNORE TIME.SLEEP(1) IT IS JUST TO SLOWDOWN THE OUTPUTS***
 #loops
 
 for x in range(11):
@@ -8,6 +10,7 @@ for x in range(1,15,5):
 #^if the range has multiple numbers seperated by commas: the first one is the starting point, the second one is ending point, and the last one is to indicate skipped numbers between the first output and the next.
 #2: if statement
 print('---------------------------------------------------')
+time.sleep(1)
 x=int(input("enter a number:"))
 # if you do not assign x as an integer you would get a syntax error
 if x%2==0:
@@ -15,11 +18,13 @@ if x%2==0:
 else:
   print('odd')
 print('--------------------------------------------------')
+time.sleep(1)
 #adding strings
 x=str(1)+"abc"
 print(x)
 #^ if we dont assign 1 as a string will get a syntax error for adding integer and a string
 print('-------------------------------------------------')
+time.sleep(1)
 #diffrence between / and // and %
 a=2
 b=5
@@ -30,6 +35,7 @@ print(x,y,z)
 print('--------------------------------------------------')
 #^ as we can see / operates normal division, // operates floor (integer) division (whithout remainder) and %'s output is the remainder of the division
 #other operations
+time.sleep(1)
 x=int(input('solve the following equation for x: 2x-6=0  answer='))
 if x!=3:
   print('incorrect')
@@ -39,6 +45,7 @@ else:
 print('--------------------------------------------------')
 
 #triple quotation
+time.sleep(1)
 print('''hi
 my
 name
@@ -47,13 +54,15 @@ is''')
 print('hi\nmy\nname\nis\n')
 print('-------------------------------------------------')
 #we can slice strings using [] for example
+time.sleep(1)
 x='python'
 print(x[2])
 print(x[0:3])
 print('--------------------------------------------------')
 #try and except number of years bonus. note: this was added after the midterm.
+time.sleep(1)
 try:
-  x=float(input('number of years served:'))
+  x=float(input('Enter number of years served:'))
   if x<1:
     print('Bonus is:',"0%")
   elif x>=2 and x<6:
@@ -66,6 +75,7 @@ print('-----------------------------------------------')
 # IMPORTANT:the except block will only be executed if the error is within the try block. meaning that if you assign the value x *before* the try function (not inside the try: indentation), and the input was not a number, the except block won't be executed and you would get an error
 
 #importing, if, and loop in one program
+time.sleep(1)
 import random 
 x=['rock','paper','scissors']
 y=random.choice(x)
@@ -108,12 +118,14 @@ print('the letter',z,'appeaqred',x,'times')
 #^ uppercase of the same letter won't count i.e: the text is cccccC it will only count 5 times
 #printing in 1 line for 'for loops'
 print('----------------------------------------')
+time.sleep(1)
 fruitsBasket=['apple','orange','bannana','grapes']
 for fruit in fruitsBasket:
   print(fruit,end=',')
 # we use end=',' to print the values in the same line
 #string play
 print('\n------------------------------------------')
+time.sleep(1)
 name='python'  
 print(name[2])
 print(name.upper())
@@ -123,6 +135,7 @@ print(name[1:4])
 #
 #list operations
 print('-------------------------------------------')
+time.sleep(1)
 my_list=['apple','banana','cherry']
 print(my_list)
 print("list length is:",len(my_list))
@@ -131,6 +144,7 @@ if 'apple' in my_list:
 #
 #adding even numbers in a range
 print('------------------------------------------')
+time.sleep(1)
 Tot=0
 for x in range(10):
   if x%2==0:
@@ -139,6 +153,7 @@ print('total:',Tot)
 # x%2==0 means the remainder of x/2 is 0 which is only true for even numbers
 #printing a number and its square
 print('-----------------------------')
+time.sleep(1)
 for number in range(1,11):
   square=number**2
   print(number,'\t     ',square)
