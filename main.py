@@ -12,7 +12,7 @@ print('---------------------------------------------------')
 time.sleep(1)
 x=int(input("enter a number:"))
 # if you do not assign x as an integer you would get a syntax error
-if x%2==1:
+if x%2==0:
    print('even')
 else:
   print('odd')
