@@ -4,7 +4,7 @@ import time
 for x in range(11):
   print("value:",x)
 #notice how the printing stops before the given range by 1 number
-for x in range(1,15,5):
+for x in range(0,15,5):
   print('second example',x)
 #^if the range has multiple numbers seperated by commas: the first one is the starting point, the second one is ending point, and the last one is to indicate skipped numbers between the first output and the next.
 #2: if statement
@@ -173,6 +173,7 @@ print('------------------------------------------')
 #
 #User defined functions basic
 #create a function that calculates the third power of a number
+time.sleep(1)
 def power3(num):
   return num*num*num
 x=power3(4)+1
@@ -181,6 +182,7 @@ print('----------------------------------------------------')
 #user defined functions advanced
 # We use user defined functions to make it easier and shorter to write certain programs
 # For example: You are asked to make a grading program that shows lists of students according to thier letter grade. and you're required to make it for a single input and multiple inputs(loop) using 'while' once and using 'for' in another.
+time.sleep(1)
 A_students=[]
 B_students=[]
 C_students=[]
@@ -224,3 +226,98 @@ while repeats<student_count:
 PrintAll()
 #^ while loop
 # Each loop without the defined function would have taken 18 lines at least.. now, each takes 3-5 lines
+print('-----------------------------')
+#Dictionaries
+#dictionaries are like a list but they have a value for each elemnt
+time.sleep(1)
+Cars={'Ferrari':'Red','Bugatti':['Black','Orange'],'Porsche':'Grey'}
+#to add a key and a value we use dictionaryname[key]=value or dictionaryname.update()
+Cars['McClaren']='Black'
+print(Cars)
+Cars.update({'G63':'Black'})
+print(Cars)
+#to print the value of acertain key use:
+print(Cars['Ferrari'])
+a=input("Enter the name of the car")
+print(Cars[a])
+time.sleep(1)
+#or
+print(Cars.get('Porsche'))
+#to reassign a value of a key use:
+Cars['Ferrari']='Yellow'
+print(Cars['Ferrari'])
+#to delete an item use:
+Cars.pop('Bugatti')
+print(Cars)
+print('-----------------------------------------')
+#OOP
+time.sleep(2)
+class Book():
+#^class identification
+  def __init__(self, title, author, content):
+    self.title = title
+    self.author = author
+    self.content = content
+#attributes^^
+  #Methods:
+  def read(self, page):
+    a = self.content.split('\n')
+    #^splitting text into pages *NOTE THAT \n IS A PAGE MARKER IN THE GIVEN TEXT.. IF THE TEXT DOES NOT HAVE \N IN IT IT WILL BE CONSIDERED 1 PAGE
+    for i in range(0, page - 1):
+      print(a[i])
+
+  def __str__(self):
+    return self.title + "by" + self.author
+
+#inheritance:
+class ComicBook(Book):
+#^Child class(Takes Attributes from another class) *NOTICE HOW THE PARENT CLASS IS IN THE BRACKETS* you can inherit attributes from multiple parent classes simply add another parent class between the brackets and call for it's attributes
+  def __init__(self, title, author, content, is_superhero):
+    #^ you should put the parent class(inheritaded) attributes and the new attributes in the child class
+    Book.__init__(self, title, author, content)
+    #^calling Parent clas attributes
+    self.is_superhero = is_superhero
+    #^Assigning new attributes
+
+
+c1 = ComicBook(
+  'Spider-man', 'Stan Lee',
+  'spider man was a kid from New York who was bitten by a spider and got the superpowers of a Spider.\n He lives with his aunt May and his uncle Ben. \n he is a student but he is also the hero of New York', True)
+c1.read(2)
+print('------------------------------------')
+print(c1.is_superhero)
+print('Please wait a few swconds')
+time.sleep(3)
+import tkinter as tk
+#^ before anything we must import tkinter, this form of importing requires you to type .tk after almost everything but allows you the freedom to choose where to use tkinter and where not
+window=tk.Tk()
+#^ beginning of a window
+window.title('Revision')
+#^setting the title of the window
+window.geometry('400x400')
+#^setting the size of the window IN PIXELS
+l1=tk.Label(window,text='I hope this revision was helpful',font='Times',bg='Blue')
+#^creating a label 
+l1.place(x=0,y=0)
+#^ this is to set where in the window the text should be.. you can use grid() ir pack() but I think place is better. *THE LABEL WILL NOT SHOW IN THE WINDOW IF YOU DONT SET A PLACE FOR IT*
+#YOU MUST USE THE SAME PLACEMENT FUNCTION(place,grid,packl)IN ALL ELEMENTS IN THE WINDOW
+l2=tk.Label(window)
+#^ creating an empty label to use in a function
+l2.place(x=150,y=100)
+
+tb=tk.Text(window,height=1,width=15)
+#^creating a text box
+tb.place(x=150,y=130)
+
+def Copy():
+  a=tb.get(0.0,tk.END)
+  #^ this will assign a to be whatever is written inside the textbox
+  l2.configure(text=f'The text box says: {a}')
+  #^ this will display whats written in the box in the empty label we created
+
+btn=tk.Button(window,text='Press here',height=1,width=10,command=lambda:Copy())
+#^ this creats a button and command=lambda is a call for the function we created
+btn.place(x=150,y=166)
+
+window.mainloop()
+#^closing the window.. this is very important or else the programm will NOT work
